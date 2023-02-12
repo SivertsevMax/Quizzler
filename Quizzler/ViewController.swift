@@ -1,19 +1,50 @@
-//
-//  ViewController.swift
-//  Quizzler
-//
-//  Created by Максим Сиверцев on 12.02.2023.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var trueButtonChange: UIButton!
+    @IBOutlet weak var falseButtonChange: UIButton!
+    @IBOutlet weak var questionText: UILabel!
+    
+    let quiz = [
+        ["Four + Two is equal to Six", "True"],
+        ["Five - Three is greater than One", "True"],
+        ["Three + Eight is less than Ten", "False"]
+    ]
+    var questionNumber = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateUI()
+        trueButtonChange.layer.cornerRadius = 20
+        falseButtonChange.layer.cornerRadius = 20
     }
-
-
+    
+ 
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        let userAnswer = sender.currentTitle
+        let currentAnswer = quiz[questionNumber][1]
+        
+        if userAnswer == currentAnswer {
+            sender.backgroundColor = UIColor.green
+        } else {
+            sender.backgroundColor = UIColor.red
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.updateButton()
+        }
+        
+        questionNumber += 1
+        updateUI()
+    }
+    
+    func updateUI() {
+        questionText.text = quiz[questionNumber][0]
+    }
+    func updateButton() {
+        trueButtonChange.backgroundColor = UIColor.clear
+        falseButtonChange.backgroundColor = UIColor.clear
+    }
 }
 
