@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136DE51C299A46FA0020412E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DE51B299A46FA0020412E /* Question.swift */; };
 		13A3E3512998ACB7007BA861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3E3502998ACB7007BA861 /* AppDelegate.swift */; };
 		13A3E3532998ACB7007BA861 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3E3522998ACB7007BA861 /* SceneDelegate.swift */; };
 		13A3E3552998ACB7007BA861 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3E3542998ACB7007BA861 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		136DE51B299A46FA0020412E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		13A3E34D2998ACB7007BA861 /* Quizzler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A3E3502998ACB7007BA861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13A3E3522998ACB7007BA861 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				13A3E3502998ACB7007BA861 /* AppDelegate.swift */,
 				13A3E3522998ACB7007BA861 /* SceneDelegate.swift */,
 				13A3E3542998ACB7007BA861 /* ViewController.swift */,
+				136DE51B299A46FA0020412E /* Question.swift */,
 				13A3E3562998ACB7007BA861 /* Main.storyboard */,
 				13A3E3592998ACB8007BA861 /* Assets.xcassets */,
 				13A3E35B2998ACB8007BA861 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13A3E3552998ACB7007BA861 /* ViewController.swift in Sources */,
+				136DE51C299A46FA0020412E /* Question.swift in Sources */,
 				13A3E3512998ACB7007BA861 /* AppDelegate.swift in Sources */,
 				13A3E3532998ACB7007BA861 /* SceneDelegate.swift in Sources */,
 			);

@@ -21,6 +21,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOA-Vh-NZp" userLabel="question view">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="494.33333333333331"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cx3-YT-ivs">
+                                                <rect key="frame" x="300" y="0.0" width="93" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="9WY-d8-XXr"/>
+                                                    <constraint firstAttribute="height" constant="35" id="LnC-Na-OAM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p34-bt-7UA">
                                                 <rect key="frame" x="10" y="229.33333333333331" width="373" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -29,9 +39,12 @@
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="cx3-YT-ivs" firstAttribute="leading" relation="lessThanOrEqual" secondItem="KOA-Vh-NZp" secondAttribute="leading" constant="300" id="4wd-2V-RtY"/>
+                                            <constraint firstAttribute="trailing" secondItem="cx3-YT-ivs" secondAttribute="trailing" id="8Pt-KY-h0d"/>
                                             <constraint firstItem="p34-bt-7UA" firstAttribute="centerY" secondItem="KOA-Vh-NZp" secondAttribute="centerY" id="IQN-QO-0yP"/>
                                             <constraint firstItem="p34-bt-7UA" firstAttribute="leading" secondItem="KOA-Vh-NZp" secondAttribute="leading" constant="10" id="aIp-cE-xXQ"/>
                                             <constraint firstItem="p34-bt-7UA" firstAttribute="centerY" secondItem="KOA-Vh-NZp" secondAttribute="centerY" id="bx2-Be-1hu"/>
+                                            <constraint firstItem="cx3-YT-ivs" firstAttribute="top" secondItem="KOA-Vh-NZp" secondAttribute="top" id="cwT-f6-4Wx"/>
                                             <constraint firstItem="p34-bt-7UA" firstAttribute="centerX" secondItem="KOA-Vh-NZp" secondAttribute="centerX" id="nYU-TN-PhC"/>
                                             <constraint firstItem="p34-bt-7UA" firstAttribute="centerX" secondItem="KOA-Vh-NZp" secondAttribute="centerX" id="pvu-gu-Non"/>
                                         </constraints>
@@ -49,7 +62,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="True" backgroundImage="Rectangle">
+                                                        <state key="normal" title="true" backgroundImage="Rectangle">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -73,7 +86,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="False" backgroundImage="Rectangle">
+                                                        <state key="normal" title="false" backgroundImage="Rectangle">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -131,6 +144,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentQuestion" destination="cx3-YT-ivs" id="hQE-oR-0tl"/>
                         <outlet property="falseButtonChange" destination="iJy-8X-wZN" id="Mzw-s0-ZO5"/>
                         <outlet property="progressView" destination="E08-xA-0Ae" id="zsW-7k-gzY"/>
                         <outlet property="questionText" destination="p34-bt-7UA" id="ixm-1S-67A"/>
