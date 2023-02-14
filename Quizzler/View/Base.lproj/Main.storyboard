@@ -106,7 +106,7 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="NXv-QM-mqC">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="97.666666666666671"/>
                                                     </imageView>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E08-xA-0Ae">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E08-xA-0Ae">
                                                         <rect key="frame" x="20" y="47" width="353" height="4"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="353" id="pCX-YN-GU2"/>
@@ -144,7 +144,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="currentQuestion" destination="cx3-YT-ivs" id="hQE-oR-0tl"/>
+                        <outlet property="CorrectAnswer" destination="cx3-YT-ivs" id="mFS-Iq-f5F"/>
                         <outlet property="falseButtonChange" destination="iJy-8X-wZN" id="Mzw-s0-ZO5"/>
                         <outlet property="progressView" destination="E08-xA-0Ae" id="zsW-7k-gzY"/>
                         <outlet property="questionText" destination="p34-bt-7UA" id="ixm-1S-67A"/>
