@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         
         if userGotItRight {
             sender.backgroundColor = UIColor.green
-            quizBrain.correctAnswer += 1
         } else {
             sender.backgroundColor = UIColor.red
         }
@@ -40,7 +39,7 @@ class ViewController: UIViewController {
         questionText.text = quizBrain.getQuestionText()
         trueButtonChange.backgroundColor = UIColor.clear
         falseButtonChange.backgroundColor = UIColor.clear
-        CorrectAnswer.text = quizBrain.getCorrectAnswer(correctAnswer: quizBrain.correctAnswer)
+        CorrectAnswer.text = "Score:\(quizBrain.getCorrectAnswer())"
         progressView.progress = quizBrain.getProgress()
     }
 }
