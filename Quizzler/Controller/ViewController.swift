@@ -10,14 +10,12 @@ class ViewController: UIViewController {
     
     var quizBrain = QuizBrain()
     
-    var correctAnswer = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         questionText.text = quizBrain.getQuestionText()
         trueButtonChange.layer.cornerRadius = 20
         falseButtonChange.layer.cornerRadius = 20
-        CorrectAnswer.text = "0/\(quizBrain.quiz.count)"
+        CorrectAnswer.text = "\(quizBrain.correctAnswer)/\(quizBrain.questionNumber + 1)"
     }
     
     
@@ -27,7 +25,7 @@ class ViewController: UIViewController {
         
         if userGotItRight {
             sender.backgroundColor = UIColor.green
-            correctAnswer += 1
+            quizBrain.correctAnswer += 1
         } else {
             sender.backgroundColor = UIColor.red
         }
@@ -35,17 +33,14 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.updateUI()
         }
-        
-        
     }
     
-    
-    
     func updateUI() {
+        quizBrain.nextQuestion()
         questionText.text = quizBrain.getQuestionText()
         trueButtonChange.backgroundColor = UIColor.clear
         falseButtonChange.backgroundColor = UIColor.clear
-        CorrectAnswer.text = quizBrain.getCorrectAnswer(correctAnswer: correctAnswer)
+        CorrectAnswer.text = quizBrain.getCorrectAnswer(correctAnswer: quizBrain.correctAnswer)
         progressView.progress = quizBrain.getProgress()
     }
 }

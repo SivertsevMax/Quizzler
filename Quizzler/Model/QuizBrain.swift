@@ -28,22 +28,29 @@ struct QuizBrain {
     }
     
     mutating func getQuestionText() -> String {
-        if questionNumber < quiz.count - 1 {
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-            correctAnswer = 0
-        }
-            
+        
         let questionText = quiz[questionNumber].question
         return questionText
     }
     
     func getProgress() -> Float {
-        return (Float(questionNumber) / Float(quiz.count))
+        return Float(questionNumber) / Float(quiz.count)
     }
     
     func getCorrectAnswer(correctAnswer: Int) -> String {
-        return "\(correctAnswer)/\(quiz.count)"
+        return "\(correctAnswer)/\(questionNumber + 1)"
+    }
+    
+    mutating func newGame() {
+        questionNumber = 0
+        correctAnswer = 0
+    }
+    
+    mutating func nextQuestion() {
+        if questionNumber < quiz.count - 1 {
+            questionNumber += 1
+        } else {
+            newGame()
+        }
     }
 }
