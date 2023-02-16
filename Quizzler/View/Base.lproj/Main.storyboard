@@ -169,6 +169,9 @@
                         <outlet property="questionText" destination="p34-bt-7UA" id="ixm-1S-67A"/>
                         <outlet property="secondButton" destination="Mcg-RU-9Zb" id="r4d-u6-qUZ"/>
                         <outlet property="thirdButton" destination="iJy-8X-wZN" id="Mzw-s0-ZO5"/>
+                        <outletCollection property="allButton" destination="G7U-YS-Eoq" collectionClass="NSMutableArray" id="cRC-qQ-1If"/>
+                        <outletCollection property="allButton" destination="Mcg-RU-9Zb" collectionClass="NSMutableArray" id="gfo-Dx-KN1"/>
+                        <outletCollection property="allButton" destination="iJy-8X-wZN" collectionClass="NSMutableArray" id="L2b-eD-01d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

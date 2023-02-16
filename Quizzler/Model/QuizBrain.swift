@@ -18,6 +18,18 @@ struct QuizBrain {
     var correctAnswer = 0
     var nameButton = [String]()
     
+    func getQuestionText() -> String {
+        quiz[questionNumber].question
+    }
+    
+    func nameOfButton(_ index: Int) -> String {
+        quiz[questionNumber].answer[index]
+    }
+    
+    func getCorrectAnswer() -> Int {
+        correctAnswer
+    }
+    
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
         if userAnswer == quiz[questionNumber].correctAnswer {
             correctAnswer += 1
@@ -27,26 +39,8 @@ struct QuizBrain {
         }
     }
     
-    func getQuestionText() -> String {
-        quiz[questionNumber].question
-    }
-    
-    func nameOfButton(_ index: Int) -> String {
-        quiz[questionNumber].answer[index]
-    }
-    
     func getProgress() -> Float {
         Float(questionNumber) / Float(quiz.count)
-    }
-    
-    func getCorrectAnswer() -> Int {
-        correctAnswer
-    }
-    
-    mutating func newGame() {
-        questionNumber = 0
-        correctAnswer = 0
-        nameButton = []
     }
     
     mutating func nextQuestion() {
@@ -55,6 +49,12 @@ struct QuizBrain {
         } else {
             newGame()
         }
+    }
+    
+    mutating func newGame() {
+        questionNumber = 0
+        correctAnswer = 0
+        nameButton = []
     }
     
 }

@@ -2,6 +2,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var allButton: [UIButton]!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var firstButton: UIButton!
     @IBOutlet weak var secondButton: UIButton!
@@ -14,15 +15,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionText.text = quizBrain.getQuestionText()
-        firstButton.layer.cornerRadius = 20
-        secondButton.layer.cornerRadius = 20
-        thirdButton.layer.cornerRadius = 20
+        allButton.forEach({ $0.layer.cornerRadius = 20 })
         firstButton.setTitle("\(quizBrain.nameOfButton(0))", for: .normal)
         secondButton.setTitle("\(quizBrain.nameOfButton(1))", for: .normal)
         thirdButton.setTitle("\(quizBrain.nameOfButton(2))", for: .normal)
-
-        CorrectAnswer.text = "\(quizBrain.correctAnswer)/\(quizBrain.questionNumber + 1)"
-    }
+        CorrectAnswer.text = "Score:\(quizBrain.getCorrectAnswer())"
+}
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -46,9 +44,7 @@ class ViewController: UIViewController {
         secondButton.setTitle("\(quizBrain.nameOfButton(1))", for: .normal)
         thirdButton.setTitle("\(quizBrain.nameOfButton(2))", for: .normal)
         questionText.text = quizBrain.getQuestionText()
-        firstButton.backgroundColor = UIColor.clear
-        secondButton.backgroundColor = UIColor.clear
-        thirdButton.backgroundColor = UIColor.clear
+        allButton.forEach({ $0.backgroundColor = UIColor.clear })
         CorrectAnswer.text = "Score:\(quizBrain.getCorrectAnswer())"
         progressView.progress = quizBrain.getProgress()
     }
