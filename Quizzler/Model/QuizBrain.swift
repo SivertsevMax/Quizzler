@@ -1,8 +1,7 @@
 import Foundation
 
 struct QuizBrain {
-    let quiz =
-    [
+    let quiz = [
         Question(q: "Which is the largest organ in the human body?", a: ["Heart", "Skin", "Large Intestine"], ca: "Skin"),
         Question(q: "Five dollars is worth how many nickels?", a: ["25", "50", "100"], ca: "100"),
         Question(q: "What do the letters in the GMT time zone stand for?", a: ["Global Meridian Time", "Greenwich Mean Time", "General Median Time"], ca: "Greenwich Mean Time"),
@@ -14,6 +13,7 @@ struct QuizBrain {
         Question(q: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile"], ca: "Gorilla"),
         Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland"], ca: "Australia")
     ]
+    
     var questionNumber = 0
     var correctAnswer = 0
     var nameButton = [String]()

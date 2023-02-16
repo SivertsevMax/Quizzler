@@ -8,7 +8,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var questionText: UILabel!
-    @IBOutlet weak var CorrectAnswer: UILabel!
+    @IBOutlet weak var сorrectAnswer: UILabel!
     
     var quizBrain = QuizBrain()
     
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         firstButton.setTitle("\(quizBrain.nameOfButton(0))", for: .normal)
         secondButton.setTitle("\(quizBrain.nameOfButton(1))", for: .normal)
         thirdButton.setTitle("\(quizBrain.nameOfButton(2))", for: .normal)
-        CorrectAnswer.text = "Score:\(quizBrain.getCorrectAnswer())"
+        сorrectAnswer.text = "Score:\(quizBrain.getCorrectAnswer())"
 }
     
     
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         thirdButton.setTitle("\(quizBrain.nameOfButton(2))", for: .normal)
         questionText.text = quizBrain.getQuestionText()
         allButton.forEach({ $0.backgroundColor = UIColor.clear })
-        CorrectAnswer.text = "Score:\(quizBrain.getCorrectAnswer())"
+        сorrectAnswer.text = "Score:\(quizBrain.getCorrectAnswer())"
         progressView.progress = quizBrain.getProgress()
     }
 }
